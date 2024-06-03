@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "30f51adf-22d5-420e-a0ba-1cc57408cdce",
+		"name": "Bookshelf Web Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32933099"
+	},
+	"item": [
+		{
+			"name": "GET Books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/books",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Book",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/books/5sWwDkVuxXJVHJXS",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"books",
+						"5sWwDkVuxXJVHJXS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Books",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Buku A\",\r\n    \"year\": 2010,\r\n    \"author\": \"John Doe\",\r\n    \"summary\": \"Lorem ipsum dolor sit amet\",\r\n    \"publisher\": \"Dicoding Indonesia\",\r\n    \"pageCount\": 100,\r\n    \"readPage\": 25,\r\n    \"reading\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/books",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Book",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Buku Aing\",\r\n    \"year\": 2010,\r\n    \"author\": \"John Doe\",\r\n    \"summary\": \"Lorem ipsum dolor sit amet\",\r\n    \"publisher\": \"Dicoding Indonesia\",\r\n    \"pageCount\": 100,\r\n    \"readPage\": 25,\r\n    \"reading\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/books/5sWwDkVuxXJVHJXS",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"books",
+						"5sWwDkVuxXJVHJXS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Book",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Buku Aing\",\r\n    \"year\": 2010,\r\n    \"author\": \"John Doe\",\r\n    \"summary\": \"Lorem ipsum dolor sit amet\",\r\n    \"publisher\": \"Dicoding Indonesia\",\r\n    \"pageCount\": 100,\r\n    \"readPage\": 25,\r\n    \"reading\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/books/5sWwDkVuxXJVHJXS",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"books",
+						"5sWwDkVuxXJVHJXS"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
