@@ -73,7 +73,23 @@ const addBookHandler = (request, h) => {
 }
 
 const showBooksHandler = (request, h) => {
-  const newBooks = books.map(book => {
+  const {name, reading, finished} = request.query;
+
+  let filteredBooks = books;
+
+  if (name) {
+    filteredBooks = filteredBooks.filter((book) => book.name === name);
+  } 
+
+  if (reading) {
+    filteredBooks = filteredBooks.filter((book) => book.reading == Number(reading));
+  }
+
+  if (finished) {
+    filteredBooks = filteredBooks.filter((book) => book.finished == Number(finished));
+  }
+
+  const showedBooks = filteredBooks.map(book => {
     return {
       id: book.id,
       name: book.name,
@@ -84,7 +100,7 @@ const showBooksHandler = (request, h) => {
   const responseBody = {
     status: 'success',
     data: {
-      books: newBooks
+      books: showedBooks
     }
   }
   const response = h.response(responseBody)
