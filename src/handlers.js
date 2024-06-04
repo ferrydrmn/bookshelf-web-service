@@ -79,7 +79,6 @@ const showBooksHandler = (request, h) => {
 
   if (name) {
     filteredBooks = filteredBooks.filter((book) => book.name.toLowerCase().includes(name.toLowerCase()));
-    console.log(filteredBooks);
   } 
 
   if (reading) {
@@ -97,10 +96,6 @@ const showBooksHandler = (request, h) => {
       publisher: book.publisher
     };
   });
-
-  if (name) {
-    console.log(showedBooks);
-  }
 
   const responseBody = {
     status: 'success',
