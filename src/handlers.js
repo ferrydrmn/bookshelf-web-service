@@ -78,7 +78,8 @@ const showBooksHandler = (request, h) => {
   let filteredBooks = books;
 
   if (name) {
-    filteredBooks = filteredBooks.filter((book) => book.name === name);
+    filteredBooks = filteredBooks.filter((book) => book.name.toLowerCase().includes(name.toLowerCase()));
+    console.log(filteredBooks);
   } 
 
   if (reading) {
@@ -96,6 +97,10 @@ const showBooksHandler = (request, h) => {
       publisher: book.publisher
     };
   });
+
+  if (name) {
+    console.log(showedBooks);
+  }
 
   const responseBody = {
     status: 'success',
@@ -146,7 +151,7 @@ const updateBookByIdHandler = (request, h) => {
   if (index === -1) {
     const responseBody = {
       status: 'fail',
-      message: 'Buku tidak ditemukan'
+      message: 'Gagal memperbarui buku. Id tidak ditemukan'
     }
     const response = h.response(responseBody)
       .type('application/json')
@@ -157,7 +162,7 @@ const updateBookByIdHandler = (request, h) => {
   if (!name) {
     const responseBody = {
       status: 'fail',
-      message: 'Gagal menambahkan buku. Mohon isi nama buku',
+      message: 'Gagal memperbarui buku. Mohon isi nama buku',
     };
     const response = h.response(responseBody)
       .type('application/json')
@@ -168,7 +173,7 @@ const updateBookByIdHandler = (request, h) => {
   if (readPage > pageCount) {
     const responseBody = {
       status: 'fail',
-      message: 'Gagal menambahkan buku. readPage tidak boleh lebih besar dari pageCount',
+      message: 'Gagal memperbarui buku. readPage tidak boleh lebih besar dari pageCount',
     };
     const response = h.response(responseBody)
       .type('application/json')
@@ -191,7 +196,7 @@ const updateBookByIdHandler = (request, h) => {
 
   const responseBody = {
     status: 'success',
-    message: 'Buku berhasil diperbaharui',
+    message: 'Buku berhasil diperbarui',
   };
   const response = h.response(responseBody)
     .type('application/json')
